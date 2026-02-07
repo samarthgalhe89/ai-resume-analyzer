@@ -15,7 +15,7 @@ const Auth = () => {
 
     useEffect(() => { //if user tries accessing protected routed without logging in then he is redirected to the auth page!
         if (auth.isAuthenticated) {
-            navigate(next); //when logs in then redirected to the pagae they wanna go!
+            navigate(next || '/'); //when logs in then redirected to the page they wanna go, defaults to home!
         }
     }, [auth.isAuthenticated, next])
 
